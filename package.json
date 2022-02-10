@@ -1,0 +1,25 @@
+{
+  "name": "wordleai",
+  "version": "1.0.0",
+  "description": "App that solves wordle game using shared results on twitter",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "dev": "nodemon index",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "wordle",
+    "twitter"
+  ],
+  "author": "Emrah Kinay",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "grapheme-splitter": "^1.0.4",
+    "needle": "^3.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
