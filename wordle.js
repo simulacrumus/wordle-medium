@@ -96,23 +96,3 @@ exports.extractWordle = (text) => {
         return []
     return wordle
 }
-
-exports.wordleResult = (answers, words, wordles) => {
-    let results =[]
-    loop1:
-    for(const a of answers){
-        loop2:
-        for(const r of wordles){
-            let isRowMatch = false
-            for(const w of words){
-                isRowMatch = wordleMatcher(a, w, r)
-                if(isRowMatch)
-                    continue loop2
-            }
-            if(!isRowMatch)
-                continue loop1
-        }
-        results.push(a)
-    }
-    return results
-}
