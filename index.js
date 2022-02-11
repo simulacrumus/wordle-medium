@@ -50,5 +50,5 @@ const findWordle = (answers, words, wordles) => {
     const uniqueWordleRows = twoDimensionalArrayToUniqueArray(wordles)
     console.log(`Processing ${uniqueWordleRows.length} unique wordle rows..`)
     const results = findWordle(answers, words, uniqueWordleRows)
-    results.length === 0 ? console.log('No wordles found') : console.log(`Today's possible wordle(s): ${results}`)
+    console.log(results.length === 0 ? 'No wordles found' : `Today's possible wordle(s): ${results}`)
 })()
