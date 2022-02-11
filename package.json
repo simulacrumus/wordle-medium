@@ -17,6 +17,7 @@
   "dependencies": {
     "dotenv": "^16.0.0",
     "grapheme-splitter": "^1.0.4",
+    "moment": "^2.29.1",
     "needle": "^3.0.0"
   },
   "devDependencies": {

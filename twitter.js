@@ -15,6 +15,7 @@ let params = {
 }
 
 exports.searchWordleTweets = async (next_token) => {
+  console.log(WORDLE_COUNT)
   if(Boolean(next_token))
     params = {...params, 'next_token': next_token }
   try {
