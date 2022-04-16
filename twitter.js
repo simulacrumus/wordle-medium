@@ -23,7 +23,7 @@ exports.searchWordleTweets = (next_token) => {
       headers: {
         Authorization: `Bearer ${TOKEN}`,
       },
-    }).then(response=>resolve(response), error=>console.log(error))
+    }).then(response=>resolve({tweets: response.body.data, next_token: response.body.meta.next_token}), error=>console.log(error))
   })
   
 }
