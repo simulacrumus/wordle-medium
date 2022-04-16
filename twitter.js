@@ -14,17 +14,16 @@ let params = {
   'start_time': THIRTY_MINUTES_AGO
 }
 
-exports.searchWordleTweets = async (next_token) => {
+exports.searchWordleTweets = (next_token) => {
   if(Boolean(next_token))
     params = {...params, 'next_token': next_token }
-  try {
-    const response = await needle('get', SEARCH_URL, params, {
+  
+  return new Promise((resolve,reject)=>{
+    needle('get', SEARCH_URL, params, {
       headers: {
         Authorization: `Bearer ${TOKEN}`,
       },
-    })
-    return {tweets: response.body.data, next_token: response.body.meta.next_token}
-  } catch (error) {
-    console.error(error)
-  }
+    }).then(response=>resolve({tweets: response.body.data, next_token: response.body.meta.next_token}), error=>console.log(error))
+  })
+  
 }
